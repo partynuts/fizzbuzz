@@ -12,18 +12,19 @@ const Fizzbuzz = module.exports = {
   getFizzBuzzString(number) {
     const numbers = Fizzbuzz.createArrayOfNumbers(number);
 
-    numbers.map((number, index) => {
+    return numbers.map((number, index) => {
       if (number % 3 === 0 && number % 15 !== 0) {
-        numbers.splice(index, 1, 'fizz');
+        return 'fizz'
+        // numbers.splice(index, 1, 'fizz');
       } else if (number % 5 === 0 && number % 15 !== 0) {
-        numbers.splice(index, 1, 'buzz');
+        return 'buzz'
+        // numbers.splice(index, 1, 'buzz');
       } else if (number % 15 === 0) {
-        numbers.splice(index, 1, 'fizzbuzz');
+        return 'fizzbuzz'
+        // numbers.splice(index, 1, 'fizzbuzz');
       }
+      return number
     });
-
-    console.log("NUMBERS STRINGIFIED", numbers);
-    return numbers;
   }
 };
 

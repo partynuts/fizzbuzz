@@ -6,7 +6,6 @@ const cors = require("cors");
 const fizzBuzzController = require('./controllers/fizzbuzz-controller')
 
 module.exports = (() => {
-  console.log("APP IST DA!");
 
   app.use(bodyParser.json());
 
@@ -14,7 +13,6 @@ module.exports = (() => {
   // app.use(eventsController);
 
   // const allVals = Object.values(requireAll("./controllers")).forEach(c => app.use(c));
-  console.log("HIER");
   console.log(fizzBuzzController)
   app.use(fizzBuzzController);
   return app;

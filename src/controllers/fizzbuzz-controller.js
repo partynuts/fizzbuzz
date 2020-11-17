@@ -1,12 +1,15 @@
 const { getFizzBuzzString } = require("../models/fizzbuzz-model");
 const { Router } = require("express");
 const controller = Router();
-console.log("FIZZBUZZ CONTROLLER GEHT")
 
 controller.get('/fizzbuzz/:num', async (req, res) => {
-  const result = await getFizzBuzzString(req.params.num);
-  console.log("RESULT", result)
-  return res.json(result);
+  if (req.params.num === Number(req.params.num).toString()) {
+    const result = await getFizzBuzzString(Number(req.params.num));
+    console.log("RESULT", result)
+    return res.json(result);
+  }
+
+  return res.status(400).send('Please insert a number!')
 });
 
 module.exports = controller;
