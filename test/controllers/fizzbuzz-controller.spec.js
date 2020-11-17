@@ -1,6 +1,4 @@
 const request = require("supertest");
-const { createArrayOfNumbers, getFizzBuzzString } = require("../../src/models/fizzbuzz-model");
-const sinon = require("sinon");
 const { expect } = require("chai");
 const App = require("../../src/app");
 

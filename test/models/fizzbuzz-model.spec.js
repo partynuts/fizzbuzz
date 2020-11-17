@@ -1,5 +1,4 @@
 const { createArrayOfNumbers, getFizzBuzzString } = require("../../src/models/fizzbuzz-model");
-const sinon = require("sinon");
 const { expect } = require("chai");
 
 describe('fizzbuzz model', () => {
@@ -7,7 +6,11 @@ describe('fizzbuzz model', () => {
     it('should create an array with numbers from 1 to the inserted number', () => {
       expect(createArrayOfNumbers(10)).to.deep.equal(([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
       expect(createArrayOfNumbers(15)).to.deep.equal(([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]));
-  });
+    });
+    it('should create an array with numbers from 1 to the inserted number', () => {
+      expect(createArrayOfNumbers(10)).to.deep.equal(([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+      expect(createArrayOfNumbers(15)).to.deep.equal(([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]));
+    });
   });
   describe('getFizzBuzzString', () => {
     it('should replace any number divisible by 3 with the word fizz and any number divisible by 5 with the word buzz if ' +
