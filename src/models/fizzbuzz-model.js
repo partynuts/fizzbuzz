@@ -32,8 +32,6 @@ const Fizzbuzz = module.exports = {
     console.log("NUMBER", number)
     let arr = [];
     for (let i = 1; i < number+1; i++) {
-      // arr[i] = i + 1;
-      // console.log("NUMBER OF i", arr[i])
       if (i % 3 === 0 && i % 15 !== 0) {
         console.log("NUMBER FIZZ", i+1)
         arr.push('fizz');

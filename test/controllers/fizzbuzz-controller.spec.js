@@ -17,7 +17,7 @@ describe('fizzbuzz controller', () => {
         .expect(400)
         .expect('Please insert a number!')
     });
-    it('should return an array with the fizzbuzz data', async () => {
+    it('should return an array with the fizzbuzz data if the inserted number is not 0', async () => {
       await request(app)
         .get("/fizzbuzz/19")
         .expect(200)
@@ -29,8 +29,11 @@ describe('fizzbuzz controller', () => {
           16,     17,     'fizz',
           19])
     });
+    it('should return an error if the inserted number is 0', async () => {
+      await request(app)
+        .get("/fizzbuzz/0")
+        .expect(400)
+        .expect('Please insert a number other than 0!')
+    });
   });
 });
-
-
-//CAMPAIGN_5000001101_DAILY_USER_DATA
