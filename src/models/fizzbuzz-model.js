@@ -1,10 +1,16 @@
-module.exports = {
-  getFizzBuzzString(number) {
-    console.log("HIER IST NUMMER", number)
+const Fizzbuzz = module.exports = {
+
+  createArrayOfNumbers(number) {
     const numbers = new Array(number);
     for (let i = 0; i < number; i++) {
       numbers[i] = i + 1;
     }
+
+    return numbers;
+  },
+
+  getFizzBuzzString(number) {
+    const numbers = Fizzbuzz.createArrayOfNumbers(number);
 
     numbers.map((number, index) => {
       if (number % 3 === 0 && number % 15 !== 0) {
@@ -16,7 +22,7 @@ module.exports = {
       }
     });
 
-    console.log("NUBERS STRINGIFIED", numbers);
+    console.log("NUMBERS STRINGIFIED", numbers);
     return numbers;
   }
 };
