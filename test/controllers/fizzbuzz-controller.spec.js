@@ -29,11 +29,16 @@ describe('fizzbuzz controller', () => {
           16,     17,     'fizz',
           19])
     });
-    it('should return an error if the inserted number is 0', async () => {
+    it('should return an error if the inserted number is 0 or negative', async () => {
       await request(app)
         .get("/fizzbuzz/0")
         .expect(400)
-        .expect('Please insert a number other than 0!')
+        .expect('Please insert a number bigger than 0!')
+
+      await request(app)
+        .get("/fizzbuzz/-6")
+        .expect(400)
+        .expect('Please insert a number bigger than 0!')
     });
   });
 });
